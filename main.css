@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --shadow: 2px 2px 8px #000;
+  --body: #E1F5FE;
+  --nav-color: #1F3C88;
+  --btn-background: #1F3C88; 
+  --btn-hover-background: #0A2B4B; 
+  --btn-text: #FFFFFF; 
+  --description-text: #333;
+  --text-color: #fff;
+}
+
+body {
+  background-color: var(--body);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--nav-color);
+  color: var(--text-color); 
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  transition: all 0.2s linear; /* for gsap transition */
+}
+
+.nav-logo a {
+  letter-spacing: 1px;
+  font-weight: 600; 
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #c4c4c4b4, #fff); 
+  color: transparent;
+  background-clip: text; 
+}
+
+#nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s linear;
+  font-weight: 610;
+}
+
+.sub-nav-container {
+  position: relative; 
+}
+
+.nav-main-video video {
+  width: 100%;
+  height: auto;
+}
+
+.sub-nav-content {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 263px;
+  left: 112px;
+}
+
+.sub-nav-content h2 {
+  color: var(--nav-color);
+  font-size: 2rem; 
+  margin-bottom: 20px; 
+}
+
+.sub-nav-content p {
+  color: var(--description-text); 
+  font-size: 1.2rem; 
+  margin: 20px;
+  font-weight: 400; 
+}
+
+.sub-nav-content .nav-btn {
+  margin: 20px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600; 
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background-color: transparent; 
+  cursor: pointer;
+  transition: all 0.3s linear;
+  position: relative;
+  overflow: hidden;
+}
+
+.sub-nav-content .nav-btn a {
+  position: relative;
+  z-index: 2;
+  color: var(--btn-text); 
+}
+
+.sub-nav-content .nav-btn::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: all .35s;
+  border-radius: 4px;
+  background-color: var(--btn-background); 
+}
+
+.sub-nav-content .nav-btn:hover {
+  color: var(--btn-hover-text); 
+}
+
+.sub-nav-content .nav-btn:hover::after {
+  width: 100%; 
+}
+
+
+/* Sell Plane */
+
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  margin-top: 28px;
+}
+
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+
+#scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 80px;
+  font-weight: 900;
+  margin-right: 20px;
+  transition: all linear 0.3s;
+  color: #000;
+}
+
+#scroller h4:hover {
+  color: var(--nav-color);
+  cursor: pointer;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
