@@ -10,11 +10,11 @@
 
 :root {
   --shadow: 2px 2px 8px #000;
-  --body: #E1F5FE;
+  --body: #000;
   --nav-color: #1F3C88;
   --btn-background: #1F3C88; 
-  --btn-hover-background: #0A2B4B; 
-  --btn-text: #FFFFFF; 
+  --btn-hover-background: #fff; 
+  --btn-text: #000; 
   --description-text: #333;
   --text-color: #fff;
 }
@@ -62,9 +62,9 @@ body {
   position: relative; 
 }
 
-.nav-main-video video {
+.nav-main-video .nav-video {
   width: 100%;
-  height: auto;
+  height: 120vh;
 }
 
 .sub-nav-content {
@@ -159,7 +159,7 @@ body {
   font-weight: 900;
   margin-right: 20px;
   transition: all linear 0.3s;
-  color: #000;
+  color: #fff;
 }
 
 #scroller h4:hover {
@@ -174,4 +174,111 @@ body {
   to {
     transform: translateX(-100%);
   }
+}
+
+.plane-for-sell-container {
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 180px;
+  margin-top: 80px;
+  position: relative;
+}
+
+.plane-sell-content {
+  position: relative; /* Needed to position the video behind the image */
+  width: 500px; /* Fixed width for both image and video */
+  height: 500px; /* Fixed height to maintain consistent dimensions */
+  border-radius: 20px; /* Ensure both have rounded corners */
+  overflow: hidden; /* To clip any overflow from video/image */
+}
+
+.plane-sell-img, .plane-sell-video {
+  width: 100%; /* Full width of the parent container */
+  height: 100%; /* Full height of the parent container */
+  border-radius: 20px; /* Rounded corners */
+  position: absolute; /* Stack video and image */
+  top: 0;
+  left: 0;
+  object-fit: cover; /* Ensures both image and video maintain aspect ratio */
+  transition: all 1s ease; /* Smooth opacity transition */
+  filter: grayscale(1);
+}
+
+
+.plane-sell-video {
+  z-index: 1; /* Video stays behind the image */
+  opacity: 0; /* Initially hidden */
+}
+
+.plane-sell-content:hover .plane-sell-video {
+  opacity: 1; /* Show video on hover */
+  filter: grayscale(0);
+}
+
+.plane-sell-content:hover .plane-sell-img {
+  opacity: 0; /* Hide image on hover */
+}
+
+.plane-content-text {
+  max-width: 400px;
+}
+
+.plane-content-text h1 {
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: whitesmoke;
+}
+
+.plane-content-text h2 {
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-size: 20px;
+  color: rgba(245, 245, 245, 0.933);
+}
+
+.plane-content-text p {
+ margin-bottom: 20px;
+ letter-spacing: 1px;
+ font-size: 14px;
+ text-align: start;
+ color: rgba(245, 245, 245, 0.796);
+}
+
+.plane-content-text .plane-btn {
+  margin: 20px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600; 
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background-color: transparent; 
+  cursor: pointer;
+  transition: all 0.4ms linear;
+  position: relative;
+  overflow: hidden;
+}
+
+.plane-content-text .plane-btn a {
+  position: relative;
+  z-index: 2;
+  color: #fff; 
+}
+
+.plane-content-text .plane-btn::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: all .35s;
+  border-radius: 4px;
+  background-color: var(--btn-background); 
+}
+
+.plane-content-text .plane-btn:hover::after {
+  width: 100%; 
 }
