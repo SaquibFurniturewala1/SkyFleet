@@ -1,3 +1,10 @@
+setTimeout(() => {
+
+  document.querySelector('.intro').style.display = 'none';
+  document.querySelector('.main-content').style.display = 'block';
+}, 5000); 
+
+
 let navListItems = document.querySelectorAll("#nav-list li");
 
 function navStyle() {

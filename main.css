@@ -8,6 +8,51 @@
   scroll-behavior: smooth;
 }
 
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--body); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 22px; 
+  animation: all 2s forwards, fadeOut 1s 3s forwards; 
+}
+
+.intro h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: #827b7b;
+  font-weight: 800;
+}
+
+.intro p {
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: rgba(143, 139, 139, 0.671);
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.main-content {
+  display: none; /* Initially hidden */
+  padding: 20px;
+}
+
 :root {
   --shadow: 2px 2px 8px #000;
   --body: #000;
@@ -67,7 +112,6 @@ body {
 
 .nav-main-video .nav-video {
   width: 100%;
-  height: 120vh;
 }
 
 .sub-nav-content {
