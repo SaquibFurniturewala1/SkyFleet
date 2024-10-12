@@ -21,6 +21,9 @@
 
 body {
   background-color: var(--body);
+  z-index: 0;
+  overflow-x: hidden; /* Avoids horizontal scrollbars */
+  overflow-y: visible; /* Allows vertical overflow if needed */
 }
 
 .nav-container {
@@ -34,7 +37,7 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1000;
   transition: all 0.2s linear; /* for gsap transition */
 }
 
@@ -176,6 +179,74 @@ body {
   }
 }
 
+
+.feature-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-y: visible; /* Allow vertical overflow */
+  position: relative;
+  margin-top: 80px;
+  display: flex;
+  z-index: 10;
+}
+
+.feature-container::-webkit-scrollbar {
+  display: none;
+}
+
+.feature-img-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: featureScroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 5;
+  position: relative;
+}
+
+.feature-img-content .feature-img {
+  height: 100%;
+  width: 180px;
+  aspect-ratio: 1/2;
+  white-space: nowrap;
+  filter: grayscale(1);
+  transition: all 0.2s linear;
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.feature-img-content .feature-img:hover {
+  filter: grayscale(0);
+  transform: scale(1.2);
+  z-index: 999;
+}
+
+.feature-container:hover .feature-img-content {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+@keyframes featureScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-80%);
+  }
+}
+
+.plane-sell-text h2 {
+  color: #A9A9A9 ;
+  margin-top: 80px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
 .plane-for-sell-container {
   display: flex;
   color: white;
@@ -183,7 +254,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   gap: 180px;
-  margin-top: 80px;
+  margin-top: 100px;
   position: relative;
 }
 
@@ -193,6 +264,7 @@ body {
   height: 500px; /* Fixed height to maintain consistent dimensions */
   border-radius: 20px; /* Ensure both have rounded corners */
   overflow: hidden; /* To clip any overflow from video/image */
+  z-index: 1;
 }
 
 .plane-sell-img, .plane-sell-video {
@@ -205,6 +277,7 @@ body {
   object-fit: cover; /* Ensures both image and video maintain aspect ratio */
   transition: all 1s ease; /* Smooth opacity transition */
   filter: grayscale(1);
+  z-index: 0;
 }
 
 
@@ -216,6 +289,7 @@ body {
 .plane-sell-content:hover .plane-sell-video {
   opacity: 1; /* Show video on hover */
   filter: grayscale(0);
+  z-index: 2;
 }
 
 .plane-sell-content:hover .plane-sell-img {
