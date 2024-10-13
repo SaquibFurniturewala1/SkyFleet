@@ -104,7 +104,86 @@ body {
   letter-spacing: 1px;
   transition: all 0.3s linear;
   font-weight: 610;
+  position: relative;
 }
+
+.form-container {
+  display: none;  /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: #1f3d88cb; 
+  padding: 50px;
+  width: max-content;  /* Set a specific width */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 180px;
+  right: 250px;
+}
+
+.form-content-left img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.form-content-left img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.form-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 20px;
+  color: #E1F5FE; /* Matches the body background */
+}
+
+.form-content-right label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.form-content-right input[type="email"],
+.form-content-right input[type="password"] {
+  margin-bottom: 20px;
+  padding: 8px;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-content-right input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.form-content-right .btn {
+  width: 250px;
+  background-color: #E1F5FE;
+  color: #1F3C88;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-content-right .btn:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+}
+
 
 .sub-nav-container {
   position: relative; 
