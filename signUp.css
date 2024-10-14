@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --accent-color: #8672FF;
+  --base-color: white;
+  --text-color: #2E2B41;
+  --input-color: #f3f0ff;
+}
+
+html {
+  font-family: Poppins, sans-serif;
+  font-size: 12pt;
+  color: var(--text-color);
+  text-align: center;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #1F3C88, #A1C4FD);
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form  > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form label {
+  flex-shrink: 0;
+  height: 50px;
+  width: 80px;
+  fill: var(--base-color);
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: var(--accent-color);
+  color: whitesmoke;
+}
+
+form input {
+  flex-grow: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 1em;
+  width: 280px;
+  border-radius: 0 10px 10px 0;
+  border: 2px solid var(--input-color);
+  border-left: none;
+  background-color: var(--input-color);
+  transition: 150ms ease;
+}
+
+form input:hover {
+  border: 2px solid var(--accent-color);
+}
+
+form input:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+
+div:has(input:focus) > label {
+  background-color: var(--text-color);
+}
+
+form button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 1000px;
+  background-color: var(--accent-color);
+  padding: .85em 4em;
+  font-size: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: #1F3C88;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0f4ae0;
+}
