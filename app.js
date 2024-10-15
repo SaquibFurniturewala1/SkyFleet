@@ -47,6 +47,3 @@ function animation() {
   });
 }
 animation();
-
-
-// LogIn Form JS
