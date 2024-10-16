@@ -69,9 +69,22 @@ body {
   z-index: 0;
   overflow-x: hidden; /* Avoids horizontal scrollbars */
   overflow-y: visible; /* Allows vertical overflow if needed */
+  cursor: none;
 }
 
-.nav-container {
+#cursor {
+  height: 20px;
+  width: 20px;
+  background-color: var(--description-text); /* Semi-transparent red */
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1;
+  transition: transform 0.1s ease; /* Smooth transition for movement */
+  pointer-events: none; /* Prevent the cursor from blocking other elements */
+  filter: drop-shadow(2px 2px 2px --description-text);  /* Glowing effect */
+}
+
+.nav-container{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -109,6 +122,19 @@ body {
 
 #nav-list a {
   color: #fff;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.menu-icon {
+  color: #fff;
+  font-size: 30px;
+}
+
+.menu-icon {
+  display: none;
 }
 
 .sub-nav-container {
@@ -227,7 +253,6 @@ body {
     transform: translateX(-100%);
   }
 }
-
 
 .feature-container {
   width: 100%;
@@ -404,4 +429,31 @@ body {
 
 .plane-content-text .plane-btn:hover::after {
   width: 100%; 
+}
+
+@media screen and (max-width: 768px) {
+  
+  #nav-list {
+    display: none; /* Hide the nav list by default */
+    position: absolute;
+    top: 50px; /* Adjust based on your layout */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--nav-color);
+  }
+
+  #nav-list.active {
+    display: flex; /* Show the nav list when active */
+  }
+
+  #nav-list li {
+    padding: 20px;
+  }
+
+  .menu-icon {
+    display: block; /* Show the menu icon */
+    cursor: pointer; /* Indicate that it can be clicked */
+  }
 }
