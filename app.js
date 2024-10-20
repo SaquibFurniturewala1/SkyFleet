@@ -1,15 +1,16 @@
-setTimeout(() => {
-  document.querySelector('.intro').style.display = 'none';
-  document.querySelector('.main-content').style.display = 'block';
-}, 2000); 
+// setTimeout(() => {
+//   document.querySelector('.intro').style.display = 'none'; // Hide the intro
+//   document.querySelector('.main-content').style.display = 'block'; // Show the main content
+// }, 4000); // 4 seconds delay
+
 
 let cursor = document.getElementById('cursor');
 let curblur = document.getElementById('cursor-blur');
-
 document.addEventListener('mousemove', (move) => {
-  cursor.style.left = move.clientX + 'px';  // Use clientX for horizontal position
-  cursor.style.top = move.clientY + 'px';   // Use clientY for vertical position
+  cursor.style.left = move.clientX + 'px';
+  cursor.style.top = move.clientY + 'px';
 });
+
 
 let navListItems = document.querySelectorAll("#nav-list li");
 

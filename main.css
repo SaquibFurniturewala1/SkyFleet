@@ -8,7 +8,7 @@
   scroll-behavior: smooth;
 }
 
-.intro {
+/* .intro {
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@
   flex-direction: column;
   color: white;
   font-size: 22px; 
-  animation: all 2s forwards, fadeOut 1s 3s forwards; 
+  animation: fadeIn 2s forwards, fadeOut 1s 3s forwards; 
 }
 
 .intro h2 {
@@ -49,9 +49,9 @@
 }
 
 .main-content {
-  display: none; /* Initially hidden */
+  display: none; 
   padding: 20px;
-}
+} */
 
 :root {
   --shadow: 2px 2px 8px #000;

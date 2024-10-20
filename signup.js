@@ -8,8 +8,6 @@ const error_message = document.getElementById('error-message');
 form.addEventListener('submit', (e) => {
   if (checkInput() === false) {
     e.preventDefault(); // Prevent form submission if inputs are invalid
-  } else{
-    window.location.href = "index.html"; 
   }
 });
 

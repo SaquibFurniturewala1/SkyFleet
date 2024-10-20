@@ -6,8 +6,6 @@ const errorLogin_message = document.getElementById('error-login-message');
 loginForm.addEventListener('submit', (e) => {
   if (!checkLoginInputs()) {
     e.preventDefault(); // Prevent form submission if inputs are invalid
-  } else {
-    window.location.href = 'http://127.0.0.1:5501/index.html'
   }
 });
 
